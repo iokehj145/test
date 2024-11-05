@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google OAuth Example</title>
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+</head>
+<body>
+
+<div id="g_id_onload"
+     data-client_id="287013024858-g3sid7ddhjc28v1n3r2uml2042976b1f.apps.googleusercontent.com"
+     data-callback="handleCredentialResponse">
+</div>
+
+<div class="g_id_signin" data-type="standard"></div>
+
+<button onclick="logout()">Logout</button>
+
+<script>
+  function handleCredentialResponse(response) {
+    const idToken = response.credential;
+    localStorage.setItem('google_id_token', idToken);
+    console.log("User logged in. ID Token:", idToken);
+  }
+
+  function logout() {
+    localStorage.removeItem('google_id_token');
+    console.log("Logged out");
+  }
+</script>
+
+</body>
+</html>
