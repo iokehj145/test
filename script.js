@@ -1,6 +1,14 @@
 document.addEventListener("DOMContentLoaded", function() {
     function fetchTopicsCount() {
-        fetch('https://server-fe3ry9vay-iokehjs-projects.vercel.app/api/topics/count')
+        fetch('https://server-fe3ry9vay-iokehjs-projects.vercel.app/api/topics/count', {
+            method: "GET",
+            headers: {
+                "Accept": "application/json",
+                "Origin": "https://iokehj145.github.io"
+            },
+            mode: "cors",
+            credentials: "include"
+        })
             .then(response => response.json())
             .then(data => {
                 const postsCountElement = document.getElementById('posts-count');
