@@ -92,6 +92,52 @@ button:hover, .auth-button:hover {
     padding: 5px 10px;
 }
 
+
+/* Эффект при наведении */
+.navigation a:hover {
+    background-color: #2980b9;
+    color: white;
+    transform: scale(1.05);
+}
+
+/* Стиль для активной кнопки */
+.navigation a.active {
+    background-color: #3498db;
+    color: white;
+    font-weight: bold; /* Акцент на активной странице */
+}
+
+button, .navigation a, .thread-list table {
+    border-radius: 8px;
+}
+
+.navigation a {
+    position: relative;
+    overflow: hidden;
+}
+
+.navigation a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #3498db;
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform 0.3s ease-out;
+}
+
+.navigation a:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+.header, .navigation {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Легкая тень */
+}
+
 .content {
     padding: 20px;
     min-height: 810px;
