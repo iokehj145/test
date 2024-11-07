@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function() {
     function fetchTopicsCount() {
-        fetch('https://server-idfhvbm4w-iokehjs-projects.vercel.app/api/topics/count')
+        fetch('https://server-66cx9x2ve-iokehjs-projects.vercel.app/api/topics/count')
             .then(response => response.json())
             .then(data => {
                 const postsCountElement = document.getElementById('posts-count');
