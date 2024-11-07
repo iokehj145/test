@@ -1,0 +1,189 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: inter, sans-serif;
+}
+
+body {
+    background: linear-gradient(to bottom, rgb(135, 206, 250), 10%,  rgb(240, 248, 255));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+button, .auth-button {
+    background-color: #3498db;
+    color: white;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+button:hover, .auth-button:hover {
+    background-color: #2980b9;
+    transform: scale(1.05);
+}
+
+.auth-button {
+    position: absolute;
+    top: 10px; /* Корректировка отступов по вертикали */
+    right: 10px; /* Корректировка отступов по горизонтали */
+}
+
+.container {
+    width: 805px;
+    max-width: 100%;
+    background-color: #F0F0F0;
+    padding: 0;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    gap: 5px; /* Расстояние между блоками логотипа и информации о пользователе */
+    border-bottom: 1px solid rgb(173, 216, 230);
+}
+
+.logo {
+    width: 500px;
+    height: 100px;
+    font-size: 48px;
+    font-weight: bold;
+    font-family: "inter", serif;
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+}
+
+
+.user-info {
+    width: 300px;
+    height: 100px;
+    text-align: left;
+    padding-right: 10px;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+.navigation {
+    display: flex;
+    justify-content: space-around;
+    padding: 10px 0;
+    margin-top: 10px; /* Расстояние в 10px ниже header */
+    background-color: #F0F0F0;
+    border-bottom: 1px solid rgb(173, 216, 230);
+}
+
+.navigation a {
+    text-decoration: none;
+    color: #333333;
+    padding: 5px 10px;
+}
+
+.content {
+    padding: 20px;
+    min-height: 810px;
+    margin-top: 10px; /* Расстояние в 10px ниже navigation */
+    background-color: #FFFFFF;
+    border-top: 1px solid rgb(173, 216, 230);
+    border-bottom: 1px solid rgb(173, 216, 230);
+}
+
+.thread-list {
+    width: 100%;
+}
+
+.thread-list table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.thread-list th,
+.thread-list td {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    text-align: left;
+}
+
+.footer {
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    margin-top: 10px; /* Расстояние в 10px ниже content */
+    background-color: #F0F0F0;
+    border-top: 1px solid rgb(173, 216, 230);
+    font-size: 14px;
+}
+
+.footer a {
+    text-decoration: none;
+    color: #333333;
+    margin: 0 5px;
+}
+
+/* Responsive Styling */
+@media (max-width: 1200px) {
+    .container {
+        width: 90%;
+    }
+}
+
+@media (max-width: 992px) {
+    .logo, .user-info {
+        width: 48%; /* Уменьшение ширины для меньших экранов */
+        font-size: 20px;
+    }
+    .navigation a {
+        font-size: 14px;
+        padding: 5px;
+    }
+    .content {
+        padding: 15px;
+        min-height: 600px; /* Уменьшение минимальной высоты контента для меньших экранов */
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        width: 95%;
+    }
+    .header {
+        flex-direction: column;
+        align-items: center;
+    }
+    .logo, .user-info {
+        width: 100%;
+        text-align: center;
+    }
+    .navigation {
+        flex-direction: column;
+    }
+    .navigation a {
+        padding: 8px 0;
+    }
+    .content {
+        padding: 10px;
+        min-height: auto; /* Гибкая высота контента для маленьких экранов */
+    }
+    .footer {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .navigation a {
+        font-size: 12px;
+    }
+    .thread-list th, .thread-list td {
+        padding: 5px;
+        font-size: 12px;
+    }
+}
