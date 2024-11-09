@@ -1,60 +1,34 @@
 <!DOCTYPE html>
-<html lang="ru">
-
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Forum Page</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <title>Google OAuth Example</title>
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
 </head>
 <body>
-    <div class="container">
-        <div class="header">
-            <div class="logo"> <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
-                width="90" height="90" viewBox="0 0 500.000000 500.000000"
-                preserveAspectRatio="xMidYMid meet">
-               
-               <g transform="translate(0.000000,500.000000) scale(0.100000,-0.100000)"
-               fill="#000000" stroke="none"> <path d="M2405 3739 c-332 -35 -584 -144 -756 -327 -153 -162 -226 -322 -250 -546 -22 -218 31 -349 167 -412 48 -23 209 -52 221 -41 3 3 -5 32 -17 64 -51 135 -30 489 40 675 59 159 200 268 369 285 54 6 54 6 48 -19 -4 -14 -124 -567 -267 -1228 -143 -661 -263 -1213 -266 -1226 l-6 -24 270 0 271 0 9 33 c4 17 66 308 138 644 l129 613 282 0 282 0 11 43 c6 23 22 83 36 132 13 50 24 93 24 98 0 4 -128 7 -285 7 -157 0 -285 2 -285 4 0 6 168 800 176 832 8 29 -11 30 189 -5 188 -33 321 -44 372 -31 147 36 230 129 292 323 37 117 38 121 9 113 -61 -19 -215 -36 -318 -36 -64 0 -210 9 -325 20 -216 20 -420 24 -560 9z"/></g></svg>
-               <b>Practice Forum</b> </div>
-            <div class="user-info">
-                <p>Онлайн: 0</p>
-                <p>Створено постів: 1</p>
-                <p>Відправлено повідомлень: 1</p>
-            </div>
-            <button class="auth-button"><a href="index.html">Увійти/Реєстрація</a></button>
-        </div>
-        <div class="navigation">
-            <a href="#">Головна</a>
-            <a href="#">Новини</a>
-            <a href="#">FAQ</a>
-            <a href="#">Правила</a>
-        </div>
-        <div class="content">
-            <div class="thread-list">
-                <h2>Список тредів</h2>
-                <table>
-                    <tr>
-                        <th>Назва</th>
-                        <th>К-сть повід.</th>
-                        <th>Останнє повідомлення</th>
-                    </tr>
-                    <tr>
-                        <td>Приклад треда</td>
-                        <td>318</td>
-                        <td>05.11.2024, 16:44 - SomeGuy: Це текст повідомлення</td>
-                    </tr>
-                </table>
-            </div>
-        </div>
-        <div class="footer">
-            <a href="#">Про нас</a>
-            <a href="#">Допомога</a>
-            <a href="#">Контакти</a>
-        </div>
-    </div>
+
+<div id="g_id_onload"
+     data-client_id="287013024858-g3sid7ddhjc28v1n3r2uml2042976b1f.apps.googleusercontent.com"
+     data-callback="handleCredentialResponse">
+</div>
+
+<div class="g_id_signin" data-type="standard"></div>
+
+<button onclick="logout()">Logout</button>
+
+<script>
+  function handleCredentialResponse(response) {
+    const idToken = response.credential;
+    localStorage.setItem('google_id_token', idToken);
+    console.log("User logged in. ID Token:", idToken);
+  }
+
+  function logout() {
+    localStorage.removeItem('google_id_token');
+    console.log("Logged out");
+  }
+</script>
+
 </body>
 </html>

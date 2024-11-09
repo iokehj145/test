@@ -237,3 +237,28 @@ button, .navigation a, .thread-list table {
         font-size: 12px;
     }
 }
+
+.content_thread {
+    padding: 20px;
+    padding-left: 50px;
+    padding-right: 50px;
+    min-height: 900px;
+    margin-top: 10px; /* Расстояние в 10px ниже navigation */
+    background-color: #FFFFFF;
+    border-top: 1px solid rgb(173, 216, 230);
+    border-bottom: 1px solid rgb(173, 216, 230);
+}
+
+.comment {
+    border: rgba(0, 0, 0, 0.5) solid 2px;
+    padding: 2vh 2vw 2vh 1vw;
+    margin-bottom: 20px;
+    width: 80%;
+    border-radius: 8px;
+    background-color: rgba(44, 50, 109, 0.1);
+}
+.comment p {
+    border-top:#000 solid 1px;
+    margin-top: 5px;
+    padding: 5px;
+}

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forum Thread</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="navigation">
+            <a href="#">Головна</a>
+            <a href="#">Новини</a>
+            <a href="#">FAQ</a>
+            <a href="#">Правила</a>
+        </div>
+
+        <div class="content_thread">
+            <h2>Приклад треда</h2>
+            <p>Типа текст и картинка снизу пусть будет</p>
+            <div class="thread-image">
+                <img src="png/thread.webp" style="border-radius: 5vh;" alt="Thread Image" height="300" width="650">
+            </div>
+
+            <div class="leave_comment" >
+                <div class="leave_comment-text">Додати коментар</div> <!-- Я не уверен что смогу сделать ту серую обводку -->
+            </div>                                                    <!-- Квадрат с закругленными краями я не осилю -->
+
+            <div class="comment-section">
+                <div class="comment-filter">фільтр: <span>Нові</span></div>
+                
+
+                <div class="comment">
+                    <img srcset="png/1.svg" alt="User Icon" width="20" height="20"/>
+                    <span class="comment-text"> <!-- и отцентровать текст (username, timestamp) дабы тот шёл от середины аватарки, как это сделать тут я не знаю :(-->
+                        <span class="username">SomeGuy</span>
+                        <span class="timestamp">05.11.2024 №318</span>
+                        <p>Це текст повідомлення...</p>
+                    </span>
+                </div>
+
+                <div class="comment">
+                    <img srcset="png/1.svg" alt="User Icon" width="20" height="20"/>
+                    <span class="comment-text">
+                        <span class="username">JuFroSamurai</span>
+                        <span class="timestamp">05.11.2024 №319 > 318</span>
+                        <p>Зробіть вид що не замітили</p>
+                    </span>
+                </div>
+
+                <div class="comment">
+                    <img srcset="png/1.svg" alt="User Icon" width="20" height="20"/>
+                    <span class="comment-text">
+                        <span class="username">byteaseed</span>
+                        <span class="timestamp">05.11.2024 №317</span>
+                        <p>Що повідомлень стало на 1 більше</p>
+                    </span>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <a href="#">Про нас</a>
+            <a href="#">Допомога</a>
+            <a href="#">Контакти</a>
+        </div>
+            </div>
+            <button class="auth-button"><a href="index.html">Увійти/Реєстрація</a></button>
+        </div>
+    </div>
+</body>
+</html>
