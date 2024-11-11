@@ -18,12 +18,30 @@
 <button onclick="logout()">Logout</button>
 
 <script>
-  function handleCredentialResponse(response) {
+  async function handleCredentialResponse(response) {
     const idToken = response.credential;
     localStorage.setItem('google_id_token', idToken);
     console.log("User logged in. ID Token:", idToken);
-  }
 
+    try {
+      const res = await fetch('https://server-hw6ax8jnj-iokehjs-projects.vercel.app/auth/google', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ token: idToken }),
+      });
+      const data = await res.json();
+
+      if (res.ok) {
+        console.log(data.message);
+      } else {
+        console.error("Authentication failed:", data.message);
+      }
+    } catch (error) {
+      console.error("Error during authentication:", error);
+    }
+  }
   function logout() {
     localStorage.removeItem('google_id_token');
     console.log("Logged out");

@@ -35,8 +35,8 @@ button:hover, .auth-button:hover {
 
 .auth-button {
     position: absolute;
-    top: 10px; /* Корректировка отступов по вертикали */
-    right: 10px; /* Корректировка отступов по горизонтали */
+    top: 10px;
+    right: 10px;
 }
 
 .container {
@@ -52,7 +52,7 @@ button:hover, .auth-button:hover {
     justify-content: space-between;
     align-items: center;
     padding: 10px;
-    gap: 5px; /* Расстояние между блоками логотипа и информации о пользователе */
+    gap: 5px;
     border-bottom: 1px solid rgb(173, 216, 230);
 }
 
@@ -82,7 +82,7 @@ button:hover, .auth-button:hover {
     display: flex;
     justify-content: space-around;
     padding: 10px 0;
-    margin-top: 10px; /* Расстояние в 10px ниже header */
+    margin-top: 10px;
     background-color: #F0F0F0;
     border-bottom: 1px solid rgb(173, 216, 230);
 }
@@ -142,7 +142,7 @@ button, .navigation a, .thread-list table {
 .content {
     padding: 20px;
     min-height: 810px;
-    margin-top: 10px; /* Расстояние в 10px ниже navigation */
+    margin-top: 10px;
     background-color: #FFFFFF;
     border-top: 1px solid rgb(173, 216, 230);
     border-bottom: 1px solid rgb(173, 216, 230);
@@ -163,6 +163,8 @@ button, .navigation a, .thread-list table {
     border-bottom: 1px solid #ddd;
     text-align: left;
 }
+
+.thread-list td { cursor: pointer;}
 
 .footer {
     display: flex;
@@ -262,4 +264,43 @@ button, .navigation a, .thread-list table {
     border-top:#000 solid 1px;
     margin-top: 5px;
     padding: 5px;
+}
+
+.content_FAQ {
+    padding: 20px;
+    min-height: 810px;
+    margin-top: 10px;
+    background-color: #FFFFFF;
+    border-top: 1px solid rgb(173, 216, 230);
+    border-bottom: 1px solid rgb(173, 216, 230);
+    font-size: larger;
+}
+
+.long_bar { /* Полоска подчёркивающая FAQ,devblog и Правила */
+    width: 765px; /* Размер сразу расчитанный на одинаковый отступ с обеих сторон */
+    height: 2px; 
+    background-color: #D9D9D9;
+    margin-top: 3px;
+    margin-bottom: 3px;
+}
+
+.content_rules,
+.content_devblog {
+    padding: 30px;
+    min-height: 810px;
+    margin-top: 10px;
+    background-color: #FFFFFF;
+    border-top: 1px solid rgb(173, 216, 230);
+    border-bottom: 1px solid rgb(173, 216, 230);
+    font-size: 17px;
+}
+
+.text_thread_main {
+    font-size: 17px;
+}
+
+.comment_bar
+.comment_bar input
+.comment_bar input::placeholder{
+    color: #000000;
 }

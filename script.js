@@ -6,12 +6,13 @@ document.addEventListener("DOMContentLoaded", function() {
                 const postsCountElement = document.getElementById('posts-count');
                 postsCountElement.textContent = `Створено постів: ${data.length}`;
                 const ListThread = document.getElementById('Posts');
-                data.forEach((item) => {
+                data.forEach((iteam) => {
                     const row = document.createElement('tr');
+                    row.id = iteam._id;
                     row.innerHTML = `
-                    <td>${item.name}</td>
-                    <td>${item.postsCount}</td>
-                    <td>${item.lastMessage}</td> `;
+                    <td>${iteam.name}</td>
+                    <td>${iteam.postsCount}</td>
+                    <td>${iteam.lastMessage}</td> `;
                     ListThread.appendChild(row);
                 });
                 console.log(data);
@@ -29,4 +30,10 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 fetchTopicsCount();
 fetchPostsCount();
+});
+document.addEventListener("click", (event) => {
+    if (event.target.tagName === "TD") {
+        localStorage.setItem('id', event.target.parentNode.id);
+        window.location.href = "Tred.html";
+    }
 });
