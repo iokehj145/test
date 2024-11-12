@@ -25,12 +25,12 @@ button, .auth-button {
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    transition: transform 0.2s ease, background-color 0.2s ease;
 }
 
-button:hover, .auth-button:hover {
-    background-color: #2980b9;
-    transform: scale(1.05);
+button:hover, .auth-button:hover, .g_id_signin:hover {
+    opacity: 0.9;
+    transform: scale(1.07);
+    transition: transform 0.2s ease, opacity 0.2s ease;
 }
 
 .auth-button {
@@ -251,7 +251,42 @@ button, .navigation a, .thread-list table {
     border-top: 1px solid rgb(173, 216, 230);
     border-bottom: 1px solid rgb(173, 216, 230);
 }
+.thread-header {
+    display: flex;
+    justify-content: space-between; /* Заголовок слева, кнопка справа */
+    align-items: center;
+    margin-bottom: 10px;
+}
 
+
+.thread-header h2 {
+    margin: 0;
+    font-weight: bold;
+}
+.thread-list-header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.create-thread-button {
+    background-color: #3498db;
+    position: relative;
+    color: white;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: 14px;
+}
+
+.create-thread-button:hover{
+    background-color: #2980b9;
+}
+
+.create-thread-button:focus{
+    outline: none;
+}
 .comment {
     border: rgba(0, 0, 0, 0.5) solid 2px;
     padding: 2vh 2vw 2vh 1vw;

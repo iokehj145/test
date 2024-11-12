@@ -1,3 +1,11 @@
+class Message {
+    constructor(id, name, postsCount, lastMessage) {
+        this.id = id;
+        this.name = name;
+        this.postsCount = postsCount;
+        this.lastMessage = lastMessage;
+    }
+}
 document.addEventListener("DOMContentLoaded", function() {
     /*function fetchmessang() {
         fetch('https://server-hw6ax8jnj-iokehjs-projects.vercel.app/api/messages')

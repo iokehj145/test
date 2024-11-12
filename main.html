@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Google OAuth Example</title>
+    <link rel="stylesheet" href="styles.css">
     <script src="https://accounts.google.com/gsi/client" async defer></script>
 </head>
 <body>
@@ -13,7 +14,7 @@
      data-callback="handleCredentialResponse">
 </div>
 
-<div class="g_id_signin" data-type="standard"></div>
+<div class="g_id_signin" data-type="standard" style="margin: 30px;"></div>
 
 <button onclick="logout()">Logout</button>
 
@@ -22,19 +23,19 @@
     const idToken = response.credential;
     localStorage.setItem('google_id_token', idToken);
     console.log("User logged in. ID Token:", idToken);
-
     try {
-      const res = await fetch('https://server-hw6ax8jnj-iokehjs-projects.vercel.app/auth/google', {
+      const res = await fetch('https://server-dlu9495k3-iokehjs-projects.vercel.app/auth/google', {
         method: 'POST',
         headers: {
-          'Content-Type': 'application/json',
-        },
+          'Content-Type': 'application/json', },
         body: JSON.stringify({ token: idToken }),
       });
       const data = await res.json();
 
       if (res.ok) {
+        localStorage.setItem("login", 1);
         console.log(data.message);
+
       } else {
         console.error("Authentication failed:", data.message);
       }
@@ -44,6 +45,7 @@
   }
   function logout() {
     localStorage.removeItem('google_id_token');
+    localStorage.setItem("login", 0);
     console.log("Logged out");
   }
 </script>
