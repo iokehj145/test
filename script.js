@@ -38,7 +38,7 @@ document.addEventListener("DOMContentLoaded", function() {
         login.addEventListener('click', LoginFun);
     }
     function fetchTopicsCount() {
-        fetch('https://server-dlu9495k3-iokehjs-projects.vercel.app/api/topics/count')
+        fetch('https://server-j6buz00cb-iokehjs-projects.vercel.app/api/topics/count')
             .then(response => response.json())
             .then(data => {try {
                 const postsCountElement = document.getElementById('posts-count');
@@ -56,7 +56,7 @@ document.addEventListener("DOMContentLoaded", function() {
             }).catch((error) => console.error('Error fetching topics count:', error) )
     }
     function fetchPostsCount() {
-        fetch('https://server-dlu9495k3-iokehjs-projects.vercel.app/api/messages/count')
+        fetch('https://server-j6buz00cb-iokehjs-projects.vercel.app/api/messages/count')
             .then(response => response.json())
             .then(data => {
                 const postsCountElement = document.getElementById('message');
