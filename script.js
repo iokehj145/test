@@ -78,7 +78,7 @@ function CreatePopup() {
             <input type="text" class="input-field" maxlength="31" placeholder=" " />
             <div class="label">опис</div>
             <textarea class="input-field" maxlength="500" rows="10" placeholder=" "></textarea>
-            <div class="button-thread"><button onclick="CreatThread" class="create-thread-button" >Створити тред</button></div>
+            <div class="button-thread"><button onclick="CreatThread()" class="create-thread-button" >Створити тред</button></div>
         </div>
     `;
 };
