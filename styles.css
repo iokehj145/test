@@ -287,6 +287,10 @@ button, .navigation a, .thread-list table {
 .create-thread-button:focus{
     outline: none;
 }
+.comment-filter{ 
+    margin-top: 6px; 
+    margin-bottom: 12px; 
+}
 .comment {
     border: rgba(0, 0, 0, 0.5) solid 2px;
     padding: 2vh 2vw 2vh 1vw;
@@ -334,8 +338,26 @@ button, .navigation a, .thread-list table {
     font-size: 17px;
 }
 
-.comment_bar
-.comment_bar input
-.comment_bar input::placeholder{
-    color: #000000;
+.comment_bar {  
+    margin-top: 15px;  
+    width: 100%;   
+    height: 40px;   
+    border-radius: 20px;   
+    background-color: #D9D9D9; /* Цвет фона поля */  
+    display: flex;  
+    align-items: center;  
+    padding: 0 15px;  
+}  
+ 
+.comment_bar input { 
+    width: 100%; 
+    border: none; 
+    background: transparent; 
+    outline: none; 
+    color: #000000; /* Цвет текста */ 
+    font-size: 14px; 
+} 
+ 
+.comment_bar input::placeholder { 
+    color: #000000; /* Цвет placeholder */ 
 }

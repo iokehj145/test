@@ -20,15 +20,22 @@
 
         <div class="content_thread">
             <h2>Приклад треда</h2>
+            <hr style="margin-top: 10px; margin-bottom: 10px; opacity: 0.3;">
             <p>Типа текст и картинка снизу пусть будет</p>
-
+            <hr style="margin-top: 10px; margin-bottom: 10px; opacity: 0.3;">
             <div class="comment_bar">
                 <input type="text" placeholder="Додати коментар" id="comment_input" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Додати коментар'" />
             </div>
 
             <div class="comment-section">
-                <div class="comment-filter">фільтр: <span>Нові</span></div>
-                
+                <div class="comment-filter" onclick="toggleFilterOptions()">
+                    <div id="filterOptions">
+                        <select onchange="filterComments(this.value)">
+                            <option value="new">Нові повідомлення</option>
+                            <option value="old">Старі повідомлення</option>
+                        </select>
+                        </div>
+                    </div>
 
                 <div class="comment">
                     <img srcset="png/1.svg" alt="User Icon" width="20" height="20"/>

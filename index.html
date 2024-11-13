@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="freamstyle.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -37,17 +38,12 @@
             <div class="thread-list">
                 <div class="thread-list-header">
                 <h2>Список тредів</h2>
-                <button class="create-thread-button">Створити Тред</button></div>
+                <button class="create-thread-button" onclick="CreatePopup()">Створити Тред</button></div>
                 <table id="Posts">
                     <tr>
                         <th>Назва</th>
                         <th>К-сть повід.</th>
                         <th>Останнє повідомлення</th>
-                    </tr>
-                    <tr>
-                        <td>Приклад треда</td>
-                        <td>318</td>
-                        <td>05.11.2024, 16:44 - SomeGuy: Це текст повідомлення</td>
                     </tr>
                 </table>
             </div>

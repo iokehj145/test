@@ -24,7 +24,7 @@
     localStorage.setItem('google_id_token', idToken);
     console.log("User logged in. ID Token:", idToken);
     try {
-      const res = await fetch('https://server-5r24i4wx5-iokehjs-projects.vercel.app/auth/google', {
+      const res = await fetch('https://server-8rnzw6lne-iokehjs-projects.vercel.app/auth/google', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json', },
@@ -35,18 +35,9 @@
       if (res.ok) {
         localStorage.setItem("login", 1);
         console.log(data.message, data.userId);
-
+        window.location.href = "index.html";
       } else {
         console.error("Authentication failed:", data.message);
-      }
-      // phase 2 check!
-      const res2 = await fetch('https://server-5r24i4wx5-iokehjs-projects.vercel.app/auth/check', {
-        method: 'POST',
-        headers: { 'Authorization': `Bearer ${idToken}`, },
-      });
-      const data2 = await res2.json();
-      if (res2.ok) {
-        console.log(data2.message);
       }
     } catch (error) {
       console.error("Error during authentication:", error);
