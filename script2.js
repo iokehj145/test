@@ -9,8 +9,7 @@ class Message {
     render() {
         const newComment = document.createElement('div');
         newComment.className = 'comment';
-        newComment.innerHTML = 
-        `
+        newComment.innerHTML = `
                     <img srcset="png/1.svg" alt="User Icon" width="20" height="20"/>
                     <span class="comment-text">
                         <span class="username">${this.email}</span>
@@ -20,10 +19,10 @@ class Message {
         return newComment;
     }
 }
-let ListOfMessange = [];
+let ListOfMessange;
 document.addEventListener("DOMContentLoaded", function() {
     function fetchMessang() {
-        fetch('https://server-19y9yra0y-iokehjs-projects.vercel.app/topics/'+localStorage.getItem('id')+'/posts')
+        fetch('https://server-34dvm3hrn-iokehjs-projects.vercel.app/topics/'+localStorage.getItem('id')+'/posts')
             .then(response => response.json())
             .then(data => {
                 const commentSection = document.querySelector('.comment-section');
@@ -35,5 +34,10 @@ document.addEventListener("DOMContentLoaded", function() {
             })
             .catch((error) => console.error('Error fetching topics count:', error) )
     }
+    const TopicRender=()=> {
+        document.getElementsByTagName('h2')[0].innerHTML = localStorage.getItem('name');
+        document.getElementsByTagName('p')[0].innerHTML = localStorage.getItem('topicDes');
+    }
 fetchMessang();
+TopicRender();
 });
