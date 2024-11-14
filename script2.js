@@ -1,33 +1,39 @@
 class Message {
-    constructor(id, name, postsCount, lastMessage) {
+    constructor(id, numberid, email, text, createdAt) {
         this.id = id;
-        this.name = name;
-        this.postsCount = postsCount;
-        this.lastMessage = lastMessage;
+        this.numberid = numberid;
+        this.email = email;
+        this.text = text;
+        this.createdAt = createdAt;
     }
-}
-document.addEventListener("DOMContentLoaded", function() {
-    /*function fetchmessang() {
-        fetch('https://server-hw6ax8jnj-iokehjs-projects.vercel.app/api/messages')
-            .then(response => response.json())
-            .then(data => {
-                const ListThread = document.getElementById('Posts');
-                data.forEach((iteam) => {
-                    const row = document.createElement('tr');
-                    row.id = iteam._id;
-                    row.innerHTML = `
-                    <div class="comment">
+    render() {
+        const newComment = document.createElement('div');
+        newComment.className = 'comment';
+        newComment.innerHTML = 
+        `
                     <img srcset="png/1.svg" alt="User Icon" width="20" height="20"/>
                     <span class="comment-text">
-                        <span class="username">iteam</span>
-                        <span class="timestamp">05.11.2024 №317</span>
-                        <p>Що повідомлень стало на 1 більше</p>
-                    </span>
-                </div>`;
-                    ListThread.appendChild(row);
+                        <span class="username">${this.email}</span>
+                        <span class="timestamp">${this.createdAt} #${this.numberid}</span>
+                        <p>${this.text}</p>
+                    </span>`;
+        return newComment;
+    }
+}
+let ListOfMessange = [];
+document.addEventListener("DOMContentLoaded", function() {
+    function fetchMessang() {
+        fetch('https://server-19y9yra0y-iokehjs-projects.vercel.app/topics/'+localStorage.getItem('id')+'/posts')
+            .then(response => response.json())
+            .then(data => {
+                const commentSection = document.querySelector('.comment-section');
+                data.forEach((iteam) => {
+                const message = new Message(iteam._id, iteam.numberid, iteam.userEmail, iteam.message, iteam.createdAt);
+                commentSection.appendChild(message.render());
                 });
-                console.log(data);
+                ListOfMessange = data;
             })
             .catch((error) => console.error('Error fetching topics count:', error) )
-    }*/
+    }
+fetchMessang();
 });
