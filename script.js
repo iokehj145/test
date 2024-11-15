@@ -92,7 +92,7 @@ const CreatThread = async () => {
     const name = document.getElementsByClassName('input-field')[0].value;
     const description = document.getElementsByClassName('input-field')[1].value;
     const data = {name: name, describe: description}
-    fetch('http://localhost:8000/topic', {
+    fetch('https://server-mckx5ngi3-iokehjs-projects.vercel.app/topic', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
