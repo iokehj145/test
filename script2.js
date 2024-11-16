@@ -4,9 +4,9 @@ const formatDate = (isoDate) => {
 };
 const filterComments = (value) => {
     if (value === 'new')
-        ListOfMessange.sort((a, b) => new Date(a.createdAt) - new Date(b.createdAt));
+        ListOfMessange.sort((a, b) => b.createdAt.localeCompare(a.createdAt));
     else
-        ListOfMessange.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
+        ListOfMessange.sort((a, b) => a.createdAt.localeCompare(b.createdAt));
     console.log(ListOfMessange);
     document.querySelectorAll('.comment').forEach((section) => section.remove());
     ListOfMessange.forEach((iteam) => {
