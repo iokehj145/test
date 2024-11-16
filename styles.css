@@ -287,9 +287,26 @@ button, .navigation a, .thread-list table {
 .create-thread-button:focus{
     outline: none;
 }
-.comment-filter{ 
+.comment-filter{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     margin-top: 6px; 
     margin-bottom: 12px; 
+}
+.comment-delete {
+    margin-right: 4vw;
+    cursor: pointer;
+    transition-duration: 300ms;
+    
+}
+.comment-delete:hover {
+    filter:invert(0.5);
+    transform: scale(1.7);
+}
+.DeleteMode:hover {
+    background-color: #f56767;
+    transform: scale(1.1);
 }
 .comment {
     border: rgba(0, 0, 0, 0.5) solid 2px;
@@ -298,6 +315,8 @@ button, .navigation a, .thread-list table {
     width: 80%;
     border-radius: 8px;
     background-color: rgba(44, 50, 109, 0.1);
+    transition: transform background-color 0.3s ease-in-out;
+    transition-duration: 300ms;
 }
 .comment p {
     border-top:#000 solid 1px;

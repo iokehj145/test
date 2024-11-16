@@ -7,13 +7,31 @@ const filterComments = (value) => {
         ListOfMessange.sort((a, b) => b.createdAt.localeCompare(a.createdAt));
     else
         ListOfMessange.sort((a, b) => a.createdAt.localeCompare(b.createdAt));
-    console.log(ListOfMessange);
     document.querySelectorAll('.comment').forEach((section) => section.remove());
     ListOfMessange.forEach((iteam) => {
         const message = new Message(iteam._id, iteam.numberid, iteam.userEmail, iteam.message, iteam.createdAt);
         const commentSection = document.querySelector('.comment-section-main');
         commentSection.appendChild(message.render());
     });
+}
+let Deletevar = false;
+const handleDelete = async(id) => {
+    if (Deletevar) {
+    const commit = document.querySelector(`.DeleteMode[id="${id}"]`);
+    const res = await fetch('https://server-m1bv0wp85-iokehjs-projects.vercel.app/topics/'+id+'/delete',{
+    method: 'POST',
+    headers: {
+        'Authorization': `Bearer ${localStorage.getItem('google_id_token')}`
+    }});
+    if(res.ok) commit.remove();
+    else console.error(res.message);
+    }
+}
+const DeleteMode = () => {
+    const commentDivs = document.querySelectorAll('.comment');
+    commentDivs.forEach(div => div.classList.toggle('DeleteMode'));
+    Deletevar = !Deletevar;
+    document.querySelector('.comment-delete').style.filter = Deletevar ? 'sepia(2) saturate(90) brightness(1)' : '';
 }
 class Message {
     constructor(id, numberid, email, text, createdAt) {
@@ -27,6 +45,8 @@ class Message {
         const newComment = document.createElement('div');
         const formattedDate = formatDate(this.createdAt);
         newComment.className = 'comment';
+        newComment.id = this.id;
+        newComment.addEventListener('click', () => handleDelete(this.id));
         newComment.innerHTML = `
                     <img srcset="png/1.svg" alt="User Icon" width="20" height="20"/>
                     <span class="comment-text">
@@ -44,7 +64,7 @@ document.addEventListener('keydown', async (e) => {
         const text = message.value;
         message.value += "...";
         message.disabled = true;
-        const response = await fetch('https://server-q43ekriiy-iokehjs-projects.vercel.app/topics/'+localStorage.getItem('id')+'/posts', {
+        const response = await fetch('https://server-m1bv0wp85-iokehjs-projects.vercel.app/topics/'+localStorage.getItem('id')+'/posts', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -64,7 +84,7 @@ document.addEventListener('keydown', async (e) => {
   });
 document.addEventListener("DOMContentLoaded", function() {
     function fetchMessang() {
-        fetch('https://server-q43ekriiy-iokehjs-projects.vercel.app/topics/'+localStorage.getItem('id')+'/posts')
+        fetch('https://server-m1bv0wp85-iokehjs-projects.vercel.app/topics/'+localStorage.getItem('id')+'/posts')
             .then(response => response.json())
             .then(data => {
                 const commentSection = document.querySelector('.comment-section-main');

@@ -43,7 +43,7 @@ document.addEventListener("DOMContentLoaded", function() {
         login.addEventListener('click', LoginFun);
     }
     function fetchTopicsCount() {
-        fetch('https://server-q43ekriiy-iokehjs-projects.vercel.app/api/topics/count')
+        fetch('https://server-m1bv0wp85-iokehjs-projects.vercel.app/api/topics/count')
             .then(response => response.json())
             .then(data => {try {
                 const postsCountElement = document.getElementById('posts-count');
@@ -61,7 +61,7 @@ document.addEventListener("DOMContentLoaded", function() {
             }).catch((error) => console.error('Error fetching topics count:', error) )
     }
     function fetchPostsCount() {
-        fetch('https://server-q43ekriiy-iokehjs-projects.vercel.app/api/messages/count')
+        fetch('https://server-m1bv0wp85-iokehjs-projects.vercel.app/api/messages/count')
             .then(response => response.json())
             .then(data => {
                 const postsCountElement = document.getElementById('message');
@@ -92,7 +92,7 @@ const CreatThread = async () => {
     const name = document.getElementsByClassName('input-field')[0].value;
     const description = document.getElementsByClassName('input-field')[1].value;
     const data = {name: name, describe: description}
-    fetch('https://server-q43ekriiy-iokehjs-projects.vercel.app/topic', {
+    fetch('https://server-m1bv0wp85-iokehjs-projects.vercel.app/topic', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
