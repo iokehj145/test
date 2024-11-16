@@ -27,14 +27,12 @@
                 <input type="text" placeholder="Додати коментар" id="comment_input" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Додати коментар'" />
             </div>
 
-            <div class="comment-section">
-                <div class="comment-filter" onclick="toggleFilterOptions()">
-                    <div id="filterOptions">
+            <div class="comment-section-main">
+                <div class="comment-filter">
                         <select onchange="filterComments(this.value)">
                             <option value="new">Нові повідомлення</option>
                             <option value="old">Старі повідомлення</option>
                         </select>
-                        </div>
                     </div>
             </div>
         </div>
