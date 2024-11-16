@@ -21,7 +21,7 @@ class Topic {
     handleClick() {
         const topic = AllTopics.find((obj) => obj._id === this.id);
         localStorage.setItem('topicDes', topic.describe);
-        localStorage.setItem('topicName', topic.name);
+        localStorage.setItem('name', topic.name);
         localStorage.setItem('id', this.id);
         window.location.href = "Tred.html";
     }
