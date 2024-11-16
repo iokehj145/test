@@ -18,7 +18,7 @@ let Deletevar = false;
 const handleDelete = async(id) => {
     if (Deletevar) {
     const commit = document.querySelector(`.DeleteMode[id="${id}"]`);
-    const res = await fetch('https://server-m1bv0wp85-iokehjs-projects.vercel.app/topics/'+id+'/delete',{
+    const res = await fetch('https://server-cop3xg6zj-iokehjs-projects.vercel.app/topics/'+id+'/delete',{
     method: 'POST',
     headers: {
         'Authorization': `Bearer ${localStorage.getItem('google_id_token')}`
@@ -64,7 +64,7 @@ document.addEventListener('keydown', async (e) => {
         const text = message.value;
         message.value += "...";
         message.disabled = true;
-        const response = await fetch('https://server-m1bv0wp85-iokehjs-projects.vercel.app/topics/'+localStorage.getItem('id')+'/posts', {
+        const response = await fetch('https://server-cop3xg6zj-iokehjs-projects.vercel.app/topics/'+localStorage.getItem('id')+'/posts', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -84,7 +84,7 @@ document.addEventListener('keydown', async (e) => {
   });
 document.addEventListener("DOMContentLoaded", function() {
     function fetchMessang() {
-        fetch('https://server-m1bv0wp85-iokehjs-projects.vercel.app/topics/'+localStorage.getItem('id')+'/posts')
+        fetch('https://server-cop3xg6zj-iokehjs-projects.vercel.app/topics/'+localStorage.getItem('id')+'/posts')
             .then(response => response.json())
             .then(data => {
                 const commentSection = document.querySelector('.comment-section-main');
